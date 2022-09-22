@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import Navbar from './Navbar';
+import Navbar from './Header';
 import Footer from './Footer';
 
 // children no es algo que le pasamos
