@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer, HeroBanner } from '../components';
+import { Product, HeroBanner, FooterBanner } from '../components';
 import { client } from '../lib/client';
 
 const Home = ({ products, bannerData }) => (
@@ -15,10 +15,12 @@ const Home = ({ products, bannerData }) => (
 
       {/* loop de los productos */}
       <div className="products-container">
-        {products?.map((product) => product.name)}
+        {/* para los productos renderizamos el componente Product pasandole los props del producto correspondiente a renderizar */}
+        {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
 
-      <Footer />
+      { /* si existe bannerData entonces pasamos la primera instancia */ }
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </div>
   ); 
 
