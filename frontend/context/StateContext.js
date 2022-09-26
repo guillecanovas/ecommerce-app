@@ -13,6 +13,9 @@ export const StateContext = ({ children }) => {
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1);
 
+    let foundProduct; //variable normal que referencia al producto que queremos actualizar
+    let index; //variable normal
+
     //Agregar al carrito
     const onAdd = (product, quantity) => {
         //mirar si esta ya en el carrito para sumar cantidad y no meterlo de nuevo
@@ -40,6 +43,38 @@ export const StateContext = ({ children }) => {
         toast.success(`${qty} ${product.name} added to the cart.`);
     }
 
+    /* REGLA n1 REACT: never mutate the state, es decir, nunca cambiar los estados con iguales */
+    /* FALLO: TODO: se cambia de orden al actualizar la cantidad */
+
+
+    /*  When incrementing or decrementing the targeted item went below the list.
+        So I removed the filter method. 
+        I cloned cartItems in newCartItems and I map this newCartItems, in the if and the else, to add the quantity to it.
+        Finally, I set it in setCartItems. */
+
+    const toggleCartItemQuanitity = (id, value) => {
+        foundProduct = cartItems.find((item) => item._id === id)
+        index = cartItems.findIndex((product) => product._id === id)
+        
+        //quedarnos todos los items menos el que estamos actualizando "id"
+        const newCartItems = cartItems;
+
+        if(value === 'sumar'){
+            newCartItems.map((item) => (item._id === id) && (item.quantity = foundProduct.quantity + 1));
+            setCartItems([...newCartItems]);
+            setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)
+            setTotalQuantities(prevTotalQuantities => prevTotalQuantities + 1)
+        } 
+        
+        else if(value === 'restar'){
+            if(foundProduct.quantity > 1){
+                newCartItems.map((item) => (item._id === id) && (item.quantity = foundProduct.quantity - 1));
+                setCartItems([...newCartItems]);
+                setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price)
+                setTotalQuantities(prevTotalQuantities => prevTotalQuantities - 1)
+            }
+        }
+    }
 
     
     const sumarCantidad = () => {
@@ -66,7 +101,8 @@ export const StateContext = ({ children }) => {
                 qty,
                 sumarCantidad,
                 restarCantidad,
-                onAdd
+                onAdd,
+                toggleCartItemQuanitity
             }}
         >
             {children}
