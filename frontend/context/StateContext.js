@@ -3,6 +3,10 @@ import { toast } from 'react-hot-toast';
 
 const Context = createContext();
 
+// Gestionamos todo el CONTEXT de la aplicación
+
+// en /pages/_app.js
+
 // <State>
 //   {children}
 // </State> 
@@ -16,7 +20,8 @@ export const StateContext = ({ children }) => {
     let foundProduct; //variable normal que referencia al producto que queremos actualizar
     let index; //variable normal
 
-    //Agregar al carrito
+    // Agregar al carrito
+    // nos pasan el producto a añadir y la cantidad
     const onAdd = (product, quantity) => {
         //mirar si esta ya en el carrito para sumar cantidad y no meterlo de nuevo
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -44,6 +49,7 @@ export const StateContext = ({ children }) => {
     }
 
     // eliminar producto del carrito
+    // nos pasan el producto
     const onRemove = (product) => {
         foundProduct = cartItems.find((item) => item._id === product._id);
         //el carrito actual menos el "product"
@@ -63,6 +69,8 @@ export const StateContext = ({ children }) => {
         I cloned cartItems in newCartItems and I map this newCartItems, in the if and the else, to add the quantity to it.
         Finally, I set it in setCartItems. */
 
+    // sumar o restar unidades de un producto
+    // nos pasan el identificador y un valor que es 'sumar' o 'restar'
     const toggleCartItemQuanitity = (id, value) => {
         foundProduct = cartItems.find((item) => item._id === id)
         index = cartItems.findIndex((product) => product._id === id)
