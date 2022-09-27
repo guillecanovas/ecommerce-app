@@ -43,6 +43,17 @@ export const StateContext = ({ children }) => {
         toast.success(`${qty} ${product.name} added to the cart.`);
     }
 
+    // eliminar producto del carrito
+    const onRemove = (product) => {
+        foundProduct = cartItems.find((item) => item._id === product._id);
+        //el carrito actual menos el "product"
+        const newCartItems = cartItems.filter((item) => item._id !== product._id);
+    
+        setTotalPrice((prevTotalPrice) => prevTotalPrice -foundProduct.price * foundProduct.quantity);
+        setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);
+        setCartItems(newCartItems);
+      }
+
     /* REGLA n1 REACT: never mutate the state, es decir, nunca cambiar los estados con iguales */
     /* FALLO: TODO: se cambia de orden al actualizar la cantidad */
 
@@ -102,7 +113,8 @@ export const StateContext = ({ children }) => {
                 sumarCantidad,
                 restarCantidad,
                 onAdd,
-                toggleCartItemQuanitity
+                toggleCartItemQuanitity, 
+                onRemove
             }}
         >
             {children}

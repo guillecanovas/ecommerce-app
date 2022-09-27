@@ -11,7 +11,7 @@ import { urlFor } from '../lib/client'
 //Este componente solo se ve cuando se clikca el carrito
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity } = useStateContext();
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
 
 
   return (
