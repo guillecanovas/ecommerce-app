@@ -5,13 +5,35 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 
 import { useStateContext } from '../context/StateContext';
-import { urlFor } from '../lib/client'
-
+import { urlFor } from '../lib/client';
+import getStripe from '../lib/getStripe';
 
 //Este componente solo se ve cuando se clikca el carrito
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+
+  //handler del pago con stripe
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    //llamada a la api "stripe.js"
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(cartItems), //le pasamos todos los productos que hay en el carrito
+    });
+
+    if(response.statusCode === 500) return; //salimos de la funcion
+    
+    const data = await response.json();
+
+    toast.loading('Redireccionando a la pantalla de pago...');
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  }
 
 
   return (
@@ -83,7 +105,7 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick="">
+              <button type="button" className="btn" onClick={handleCheckout}>
                 Pay with Stripe
               </button>
             </div>
