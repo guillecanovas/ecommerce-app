@@ -21,9 +21,9 @@ const Cart = () => {
     const response = await fetch('/api/stripe', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(cartItems), //le pasamos todos los productos que hay en el carrito
+      body: JSON.stringify(cartItems), //le pasamos los productos del carrito
     });
 
     if(response.statusCode === 500) return; //salimos de la funcion

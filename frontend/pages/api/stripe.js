@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 //en next.js todos los ficheros tienen que tener un handler
 export default async function handler(req, res) {
     if(req.method === 'POST'){
-        console.log(req.body.cartItems); //al ser puro backend los console salen en la terminal y no en el navegador
+        console.log(req.body); //al ser puro backend los console salen en la terminal y no en el navegador
         try {
             //procesar pago 
             //sacado de la documentacion de next
@@ -22,12 +22,13 @@ export default async function handler(req, res) {
                   { shipping_rate: 'shr_1Ln4quEzhDDrJrbUsUo8ggA1' } //envio express
                 ],
                 line_items: req.body.map((item) => {
+                
                   const img = item.image[0].asset._ref;
-                  const newImage = img.replace('image-', 'https://cdn.sanity.io/images/vfxfwnaw/production/').replace('-webp', '.webp');
+                  const newImage = img.replace('image-', 'https://cdn.sanity.io/images/7k5g0gpu/production/').replace('-webp', '.webp');
         
                   return {
                     price_data: { 
-                      currency: 'usd',
+                      currency: 'eur',
                       product_data: { 
                         name: item.name,
                         images: [newImage],
