@@ -32,6 +32,7 @@ const Cart = () => {
 
     toast.loading('Redireccionando a la pantalla de pago...');
 
+    // a partir del promise de stripe
     stripe.redirectToCheckout({ sessionId: data.id });
   }
 
