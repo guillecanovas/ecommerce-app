@@ -15,6 +15,7 @@ import { Toaster } from 'react-hot-toast';
 //          <Children />
 //        <Footer />
 
+//No renderiza MyApp, el componente que renderiza es Layout
 function MyApp({ Component, pageProps }) {
   return (
     <StateContext>
