@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 const Context = createContext();
 
 // Gestionamos todo el CONTEXT de la aplicación
+// de esta manera todas las paginas y componentes comparten el mismo context
 
 // en /pages/_app.js
 
@@ -115,8 +116,11 @@ export const StateContext = ({ children }) => {
                 showCart,
                 setShowCart,
                 cartItems,
+                setCartItems,
                 totalPrice,
+                setTotalPrice,
                 totalQuantities,
+                setTotalQuantities,
                 qty,
                 sumarCantidad,
                 restarCantidad,

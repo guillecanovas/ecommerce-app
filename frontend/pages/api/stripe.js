@@ -42,7 +42,7 @@ export default async function handler(req, res) {
                     quantity: item.quantity
                   }
                 }),
-                success_url: `${req.headers.origin}/success`,
+                success_url: `${req.headers.origin}/success`, //redirecciona a la pagina de confetti 
                 cancel_url: `${req.headers.origin}/canceled`,
               }
         

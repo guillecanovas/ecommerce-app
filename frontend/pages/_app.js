@@ -5,6 +5,16 @@ import '../styles/globals.css'
 import { StateContext } from '../context/StateContext';
 import { Toaster } from 'react-hot-toast';
 
+
+//Esta es la pagina principal, es decir, sabemos que las demas van a aparecer siempre en su ruta
+//pero esta pagina engloba a todas las demas
+//es decir, todas las paginas ...
+//estan wrapeadas con StateContext para guardar el contexto de la app
+//y estan wrappeadas con layout que a su vez esta formada por
+//       <Header />
+//          <Children />
+//        <Footer />
+
 function MyApp({ Component, pageProps }) {
   return (
     <StateContext>
