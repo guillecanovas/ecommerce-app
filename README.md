@@ -21,5 +21,5 @@ This is a project of an online store developed in React that allows users to mak
 
 ## Demo
 
-You can see the application in action [here](https://ecommerce-m01zxydil-755848-unizares.vercel.app/).
+You can see the application in action [here](https://ecommerce-app-one-gilt.vercel.app/).
 
