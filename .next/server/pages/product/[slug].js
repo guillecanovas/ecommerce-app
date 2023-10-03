@@ -11,9 +11,9 @@ exports.modules = {
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "getStaticPaths": () => (/* binding */ getStaticPaths),
-/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
@@ -26,8 +26,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_StateContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2996);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components__WEBPACK_IMPORTED_MODULE_4__, _context_StateContext__WEBPACK_IMPORTED_MODULE_5__]);
 ([_components__WEBPACK_IMPORTED_MODULE_4__, _context_StateContext__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
 /* al hacer con "[]" lo hacemos dinamicamente */ /* no hace falta crear ningun router */ /* http://localhost:3000/product/headphones */ 
+
 
 
 
@@ -41,7 +41,7 @@ const ProductDetails = ({ product , products  })=>{
         onAdd(product, qty);
         setShowCart(true); //para que nos lleve a mostrar el carrito directamente
     };
-    return(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "product-detail-container",
@@ -57,12 +57,11 @@ const ProductDetails = ({ product , products  })=>{
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "small-images-container",
-                                children: image === null || image === void 0 ? void 0 : image.map((item, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                children: image?.map((item, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                         src: (0,_lib_client__WEBPACK_IMPORTED_MODULE_3__/* .urlFor */ .u)(item),
-                                        className: i === index ? 'small-image selected-image' : 'small-image',
+                                        className: i === index ? "small-image selected-image" : "small-image",
                                         onMouseEnter: ()=>setIndex(i)
-                                    }, i)
-                                )
+                                    }, i))
                             })
                         ]
                     }),
@@ -135,8 +134,7 @@ const ProductDetails = ({ product , products  })=>{
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                         type: "button",
                                         className: "add-to-cart",
-                                        onClick: ()=>onAdd(product, qty)
-                                        ,
+                                        onClick: ()=>onAdd(product, qty),
                                         children: "Add to Cart"
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
@@ -163,14 +161,13 @@ const ProductDetails = ({ product , products  })=>{
                             className: "maylike-products-container track",
                             children: products.map((item)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components__WEBPACK_IMPORTED_MODULE_4__/* .Product */ .xs, {
                                     product: item
-                                }, item._id)
-                            )
+                                }, item._id))
                         })
                     })
                 ]
             })
         ]
-    }));
+    });
 };
 // es necesario para poder ir a otros productos desde aqui
 // siempre hay que hacer esto cuando routeamos dinamicamente
@@ -187,11 +184,10 @@ const getStaticPaths = async ()=>{
             params: {
                 slug: product.slug.current
             }
-        })
-    );
+        }));
     return {
         paths,
-        fallback: 'blocking'
+        fallback: "blocking"
     };
 };
 // para tener la informacion antes del renderizado
@@ -238,10 +234,17 @@ module.exports = require("@stripe/stripe-js");
 
 /***/ }),
 
-/***/ 562:
+/***/ 3280:
 /***/ ((module) => {
 
-module.exports = require("next/dist/server/denormalize-page-path.js");
+module.exports = require("next/dist/shared/lib/app-router-context.js");
+
+/***/ }),
+
+/***/ 2796:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
@@ -266,10 +269,45 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
 
+/***/ 4406:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
+
+/***/ }),
+
 /***/ 4964:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 1751:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
+
+/***/ }),
+
+/***/ 6220:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
+/***/ 299:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 3938:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
@@ -280,10 +318,17 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 
 /***/ }),
 
-/***/ 4365:
+/***/ 5789:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/get-middleware-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1897:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
 
 /***/ }),
 
@@ -294,6 +339,13 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
 
+/***/ 8854:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
+
+/***/ }),
+
 /***/ 1292:
 /***/ ((module) => {
 
@@ -301,10 +353,24 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.j
 
 /***/ }),
 
+/***/ 4567:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
+
+/***/ }),
+
 /***/ 979:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
+
+/***/ }),
+
+/***/ 3297:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
 
 /***/ }),
 
@@ -385,7 +451,7 @@ module.exports = import("react-hot-toast");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [730,664,996,932], () => (__webpack_exec__(8846)));
+var __webpack_exports__ = __webpack_require__.X(0, [676,664,996,932], () => (__webpack_exec__(8846)));
 module.exports = __webpack_exports__;
 
 })();

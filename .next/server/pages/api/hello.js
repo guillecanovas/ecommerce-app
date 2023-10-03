@@ -15,9 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 function handler(req, res) {
     res.status(200).json({
-        name: 'John Doe'
+        name: "John Doe"
     });
-};
+}
 
 
 /***/ })

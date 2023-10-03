@@ -26,31 +26,31 @@ var external_stripe_default = /*#__PURE__*/__webpack_require__.n(external_stripe
 const stripe = new (external_stripe_default())(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 //en next.js todos los ficheros tienen que tener un handler
 async function handler(req, res) {
-    if (req.method === 'POST') {
+    if (req.method === "POST") {
         try {
             //procesar pago 
             //sacado de la documentacion de next
             const params = {
-                submit_type: 'pay',
-                mode: 'payment',
+                submit_type: "pay",
+                mode: "payment",
                 payment_method_types: [
-                    'card'
+                    "card"
                 ],
-                billing_address_collection: 'auto',
+                billing_address_collection: "auto",
                 shipping_options: [
                     {
-                        shipping_rate: 'shr_1Ln4q2EzhDDrJrbUTTh686wf'
+                        shipping_rate: "shr_1Ln4q2EzhDDrJrbUTTh686wf"
                     },
                     {
-                        shipping_rate: 'shr_1Ln4quEzhDDrJrbUsUo8ggA1'
+                        shipping_rate: "shr_1Ln4quEzhDDrJrbUsUo8ggA1"
                     } //envio express
                 ],
                 line_items: req.body.map((item)=>{
                     const img = item.image[0].asset._ref;
-                    const newImage = img.replace('image-', 'https://cdn.sanity.io/images/7k5g0gpu/production/').replace('-webp', '.webp');
+                    const newImage = img.replace("image-", "https://cdn.sanity.io/images/7k5g0gpu/production/").replace("-webp", ".webp");
                     return {
                         price_data: {
-                            currency: 'eur',
+                            currency: "eur",
                             product_data: {
                                 name: item.name,
                                 images: [
@@ -79,10 +79,10 @@ async function handler(req, res) {
             });
         }
     } else {
-        res.setHeader('Allow', 'POST');
-        res.status(405).end('Method Not Allowed');
+        res.setHeader("Allow", "POST");
+        res.status(405).end("Method Not Allowed");
     }
-};
+}
 
 
 /***/ })
