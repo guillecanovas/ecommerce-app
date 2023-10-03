@@ -6,7 +6,6 @@ const Home = ({ products, bannerData }) => (
     <div>
       {/* le pasamos al componente HeroBanner los datos del primer producto */ }
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
-        {console.log(bannerData)}
 
       <div className="products-heading">
         <h2>Products</h2>

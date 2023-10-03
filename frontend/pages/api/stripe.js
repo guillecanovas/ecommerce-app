@@ -8,7 +8,6 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 //en next.js todos los ficheros tienen que tener un handler
 export default async function handler(req, res) {
     if(req.method === 'POST'){
-        console.log(req.body); //al ser puro backend los console salen en la terminal y no en el navegador
         try {
             //procesar pago 
             //sacado de la documentacion de next
