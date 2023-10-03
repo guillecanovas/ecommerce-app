@@ -29,7 +29,7 @@ width: 100%;
 .navbar-container{
   display: flex;
   justify-content: space-between;
-  margin: 6px 18px;
+  margin: 10px 18px;
   position: relative;
 }
 .marquee-text{
@@ -65,8 +65,9 @@ width: 100%;
     margin-left: 6px;
 }
 .logo{
-  color: gray;
-  font-size: 18px;
+  color: #324d67;
+  font-size: 25px;
+  font-weight: 800;
 
 }
 .cart-icon{
@@ -132,7 +133,7 @@ width: 100%;
 
 .hero-banner-container{
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  background-color: #cecece;
   border-radius: 15px;
   position: relative;
   height: 500px;
@@ -142,11 +143,12 @@ width: 100%;
 }
 .hero-banner-container .beats-solo{
   font-size: 20px;
+  margin: 1%;
 }
 .hero-banner-container button{
    border-radius: 15px;
-  padding: 10px 16px;
-  background-color: #f02d34;
+  padding: 15px 16px;
+  background-color: #000000;
   color: white;
   border: none;
   margin-top: 40px;
@@ -162,7 +164,7 @@ width: 100%;
 }
 .hero-banner-container h1{
   color: white;
-  font-size: 10em;
+  font-size: 6em;
   margin-left: -20px;
   text-transform: uppercase;
 }
@@ -172,6 +174,7 @@ width: 100%;
   right:20%;
   width: 450px;
   height: 450px;
+  opacity: 90%;
 }
 
 
@@ -214,7 +217,7 @@ text-align: end;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #56bdfdc0;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -231,7 +234,7 @@ text-align: end;
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: black;
   border: none;
   margin-top: 40px;
   font-size: 18px;
@@ -248,10 +251,12 @@ text-align: end;
 }
 .footer-banner-image{
   position: absolute;
+  height: 100%;
   /* top: -35%;
   left: 8%; */
-  top: -25%;
-  left: 25%;
+  top: 0%;
+  left: 45%;
+  opacity: 90%;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -379,7 +384,7 @@ padding: 20px 10px;
 }
 .remove-item{
   font-size: 24px;
-  color: #f02d34;
+  color: black;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -407,7 +412,7 @@ padding: 30px 65px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #324d67;
   color: #fff;
   cursor: pointer;
     transform: scale(1, 1);
@@ -435,7 +440,7 @@ padding: 30px 65px;
   transition: .3s ease-in-out;
 }
 .product-detail-image:hover{
-  background-color: #f02d34;
+  background-color: #858585c0;
 
 }
 .small-images-container{
@@ -452,10 +457,10 @@ padding: 30px 65px;
 }
 
 .selected-image{
-  background-color:#f02d34;
+  background-color:#858585c0;
 }
 .reviews{
-  color: #f02d34;
+  color: red;
   margin-top: 10px;
   display: flex;
   gap: 5px;
@@ -476,7 +481,7 @@ padding: 30px 65px;
   font-weight: 700 ;
   font-size: 26px;
   margin-top: 30px;
-  color:#f02d34;
+  color:black;
 }
 .price .old-price, .product-price .old-price, .price .old-price{
   color: gray;
@@ -494,12 +499,12 @@ padding: 30px 65px;
 }
 .buttons .add-to-cart{
   padding: 10px 20px;
-  border: 1px solid #f02d34 ;
+  border: 1px solid black ;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
   background-color: white;
-  color: #f02d34;
+  color: #000305;
   cursor: pointer;
   width: 200px;
    transform: scale(1, 1);
@@ -512,7 +517,7 @@ padding: 30px 65px;
   width: 200px;
 
   padding: 10px 20px;
-  background-color: #f02d34;
+  background-color: #324d67;
   color: white;
   border: none;
   margin-top: 40px;
@@ -536,14 +541,14 @@ padding: 6px;
 }
 .quantity-desc .minus{
   border-right: 1px solid gray;
-  color: #f02d34;
+  color: black;
 }
 .quantity-desc .num{
   border-right: 1px solid gray;
   font-size: 20px;
 }
 .quantity-desc .plus{
-  color: rgb(49, 168, 49);
+  color: black
 
 }
 
@@ -565,7 +570,7 @@ padding: 6px;
 }
 .max-qty{
   font-weight: 500;
-  color: #f02d34;
+  color: #56bdfdc0;
 }
 .success-wrapper, .cancel-wrapper{
   background-color: white;
@@ -614,7 +619,7 @@ margin-top: 160px;
 }
 .success .description .email{
   margin-left: 5px;
-  color: #f02d34;
+  color: #56bdfdc0;
 }
 .product-max-qty{
   margin-top: 10px;
@@ -622,13 +627,10 @@ margin-top: 160px;
 
 @media screen and (max-width:800px) {
   .hero-banner-container{
-    height: 560px;
+    height: 400px;
   }
   .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    visibility: hidden;
   }
   .footer-banner-container{
     height: 560px;
@@ -638,15 +640,16 @@ margin-top: 160px;
     width: 77%;
     left: 30%;
     top: 6%;
-    height: 56%
+    height: 56%;
+    opacity: 0%;
   }
   .banner-desc .left h3{
     font-weight: 900;
-    font-size: 50px;
+    font-size: 45px;
     margin-left: 5px;
   }
   .banner-desc .left p{
-    margin:18px;
+    margin:10px;
   }
   .banner-desc .right h3{
     font-size: 45px;
@@ -671,7 +674,7 @@ margin-top: 160px;
     font-size: 40px;
   }
   .hero-banner-container button{
-    margin-top: 90px;
+    margin-top: 10px;
     z-index: 10000;
   }
   .desc{

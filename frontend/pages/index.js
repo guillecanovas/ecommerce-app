@@ -9,8 +9,7 @@ const Home = ({ products, bannerData }) => (
         {console.log(bannerData)}
 
       <div className="products-heading">
-        <h2>Best Selling Products</h2>
-        <p>Speakers of many variations</p>
+        <h2>Products</h2>
       </div>
 
       {/* loop de los productos */}

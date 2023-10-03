@@ -26,15 +26,15 @@ const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTi
         {/* lo que va a la izquierda */}
         <div className="right">
           <p>{smallText}</p>
-          <h3>{midText}</h3>
+          <h3>SALE</h3>
           <p>{desc}</p>
-          <Link href={`/product/${product}`}>
+          <Link href={`/product/barbell-babe-black-tee`}>
             <button type="button">{buttonText}</button>
           </Link>
         </div>
 
         <img 
-          src={urlFor(image)} className="footer-banner-image"
+          src="prueba-foot.png" className="footer-banner-image"
         />
       </div>
     </div>

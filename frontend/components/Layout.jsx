@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>
-        <title>Guillermo Cánovas</title> {/* titulo de la pagina */}
+        <title>Online Shop</title> {/* titulo de la pagina */}
       </Head>
       <header>
         <Navbar />

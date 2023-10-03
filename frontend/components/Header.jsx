@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="navbar-container">
       <p className="logo">
-        <Link href="/">Guillermo Cánovas</Link>
+        <Link href="/">GYMRAT GRAPHICS</Link>
       </p>
 
 
